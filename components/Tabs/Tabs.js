@@ -24,6 +24,7 @@ class TabLink {
   select() {
     // Get all of the elements with the tabs-link class
     const links = document.querySelectorAll(".tabs-Link");
+
     // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
     links.forEach(linky => linky.classList.remove("tabs-link-selected"));
 
@@ -37,16 +38,16 @@ class TabLink {
 class TabItem {
   constructor(element) {
     // Assign this.element to the passed in element
-    // this.element = element;
+    this.element = element;
   }
 
   select() {
     // Select all ".tabs-item" elements from the DOM
     const items = document.querySelectorAll(".tabs-item");
     // Remove the class "tabs-item-selected" from each element
-
+    items.forEach(item => item.classList.remove("tabs-item-selected"));
     // Add a class named "tabs-item-selected" to this element
-    //this.element;
+    this.element.classList.add("tabs-item-selected");
   }
 }
 
@@ -60,4 +61,5 @@ class TabItem {
 
 */
 
-links = document.querySelectorAll();
+links = document.querySelectorAll(".tabs-link");
+links.forEach(linky => new TabLink(linky));
